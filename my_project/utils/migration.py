@@ -38,3 +38,7 @@ for quote in quotes:
     if not exist_quote:
         author = db.authors.find_one({'_id': quote['author']})
         a = Author.objects.get(fullname=author['fullname'])
+        q = Quote.objects.create(quote=quote['quote'], author=a)
+
+        for tag in tags:
+            q.tags.add(tag)
