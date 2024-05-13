@@ -24,9 +24,12 @@
             </div>
             <div class="col-md-4">
                 <p>
+
+                    <a href="{% url 'app_auth:upload' %}" class="btn btn-info">Upload</a>
+                    <a href="{% url 'app_auth:logout' %}" class="btn btn-secondary">Logout</a>
                     <a href="{% url 'app_auth:signup' %}" class="btn btn-primary">SignUp</a>
                     <a href="{% url 'app_auth:signin' %}" class="btn btn-success">SignIn</a>
-                    <a href="{% url 'app_auth:logout' %}" class="btn btn-secondary">Logout</a>
+
                 </p>
             </div>
         </div>

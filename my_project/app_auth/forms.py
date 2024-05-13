@@ -1,6 +1,14 @@
+from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.forms import CharField, TextInput, PasswordInput
+
+
+class UploadAuthorsForm(forms.Form):
+    authors_file = forms.FileField()
+
+class UploadQuotesForm(forms.Form):
+    quotes_file = forms.FileField()
 
 
 class RegisterForm(UserCreationForm):
