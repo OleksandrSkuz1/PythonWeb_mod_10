@@ -1,3 +1,11 @@
-from django.db import models
+from django.shortcuts import render
 
-# Create your models here.
+
+def home(request):
+    authors = Author.objects.all()
+    quotes = Quote.objects.all()
+    context = {
+        'authors': authors,
+        'quotes': quotes,
+    }
+    return render(request, 'app_auth/home.html', context)
