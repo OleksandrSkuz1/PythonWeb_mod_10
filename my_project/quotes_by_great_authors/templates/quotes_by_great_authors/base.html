@@ -24,9 +24,9 @@
             </div>
             <div class="col-md-4">
                 <p>
-                    <a href="/login" class="btn btn-primary">SignUp</a>
-                    <a href="/login" class="btn btn-success">Login</a>
-                    <a href="/login" class="btn btn-secondary">Logout</a>
+                    <a href="{% url 'app_auth:signup' %}" class="btn btn-primary">SignUp</a>
+                    <a href="{% url 'app_auth:signin' %}" class="btn btn-success">SignIn</a>
+                    <a href="{% url 'app_auth:logout' %}" class="btn btn-secondary">Logout</a>
                 </p>
             </div>
         </div>
@@ -36,5 +36,3 @@
 </div>
 </body>
 </html>
-
-

@@ -1,10 +1,24 @@
-from django.shortcuts import render, redirect
-from django.views import View
-from django.contrib import messages
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+from django.shortcuts import render
+from django.contrib.auth import login
 from .forms import RegisterForm
 
-# Create your views here.
+def logout_view(request):
+    if request.method == 'POST':  # Змінено на POST
+        logout(request)
+        return redirect('app_auth:signin')
+    else:
+        return render(request, 'app_auth/logout.html')  # Додано для GET запитів
 
-class RegisterView(View):
-    template_name = 'app_auth/signup.html'
-    form_class = RegisterForm
+def signup(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('quotes_by_great_authors:root')
+    else:
+        form = RegisterForm()
+    return render(request, 'app_auth/signup.html', {'form': form})
+
