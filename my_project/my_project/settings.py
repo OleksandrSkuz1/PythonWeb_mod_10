@@ -135,3 +135,12 @@ LOGIN_REDIRECT_URL = 'quotes_by_great_authors:root'
 LOGOUT_REDIRECT_URL = 'app_auth:signin'
 
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.meta.ua'
+EMAIL_PORT = 465
+EMAIL_STARTTLS = False
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = 'example@meta.ua'
+EMAIL_HOST_PASSWORD = 'secretPassword'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
