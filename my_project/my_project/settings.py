@@ -133,3 +133,5 @@ LOGIN_URL = 'app_auth:signin'
 LOGOUT_URL = 'app_auth:logout'
 LOGIN_REDIRECT_URL = 'quotes_by_great_authors:root'
 LOGOUT_REDIRECT_URL = 'app_auth:signin'
+
+
